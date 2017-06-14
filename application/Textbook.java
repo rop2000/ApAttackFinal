@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Point;
+import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.util.Random;
 
@@ -46,27 +47,22 @@ private void initTextbook() {
 	    }
 		
 		
-		
-		
-		
-		public void moveLeft() {
-	//		this.setLocation(this.getX() - Constants.TEXTBOOK_X_VELOCITY, this.getY());
-		}
+public boolean checkHit(int x, int y, Rectangle rect) {
+	
+	return (x >= rect.x && x <= rect.x+rect.width) &&
+	        (y >= rect.y && y <= rect.y+rect.height);
+}
 
-		public boolean isEaten() {
-			return eaten;
-		}
-		public void setEaten(boolean eaten) {
-			this.eaten = eaten;
-		}
-
-		public float getAlpha() {
-			return a;
-		}
+public boolean checkCollision(Rectangle rect1, Rectangle rect2)
+{
+	return checkHit(rect1.x, rect1.y, rect2) ||
+	        checkHit(rect1.x+rect1.width, rect1.y, rect2) ||
+	        checkHit(rect1.x, rect1.y+rect1.height, rect2) ||
+	        checkHit(rect1.x+rect1.width,
+	                 rect1.y+rect1.height, rect2);	
+}
 		
-		public void setAlpha(float alpha) {
-			this.a = alpha;
-		}
+	
 	
 		public Image getImage()
 		{

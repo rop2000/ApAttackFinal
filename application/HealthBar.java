@@ -28,11 +28,11 @@ public class HealthBar  {
 	}
 
 	public int getX() {
-		return Constants.HEALTHBAR_X + Constants.HEALTHBAR_WIDTH - (int) (this.health / Constants.HEALTH_MAX * Constants.HEALTHBAR_WIDTH);
+		return (Constants.HEALTHBAR_X + Constants.HEALTHBAR_WIDTH - (int) (this.health / Constants.HEALTH_MAX * Constants.HEALTHBAR_WIDTH));
 	}
 
 	public float getHealthPercentage() {
-		return this.health / Constants.HEALTH_MAX;
+		return (this.health / Constants.HEALTH_MAX);
 	}
 	
 }

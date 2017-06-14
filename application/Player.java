@@ -9,7 +9,7 @@ import java.awt.event.KeyListener;
 
 import javax.swing.ImageIcon;
 
-public class Player extends Point{
+public class Player {
 
 String name; 
 private boolean moveRight;
@@ -22,10 +22,10 @@ private ImageIcon ii;
 
 	public Player()	
 	{
-	this.setLocation(new Point(0, Constants.PLAYER_START_Y));
-	this.moveRight = false;
-	this.moveLeft = false;
-	this.moveUp = false;
+	//this.setLocation(new Point(0, Constants.PLAYER_START_Y));
+	//this.moveRight = false;
+//	this.moveLeft = false;
+//	this.moveUp = false;
     initPlayer();
 	}
 
@@ -40,47 +40,6 @@ private ImageIcon ii;
 	        return player;
 	    }
 	  
-	public boolean isMoveRight() {
-		return moveRight;
-	}
-
-	public void setMoveRight(boolean moveRight) {
-		this.moveRight = moveRight;
-	}
-
-	public boolean isMoveLeft() {
-		return moveLeft;
-	}
-
-	public void setMoveLeft(boolean moveLeft) {
-		this.moveLeft = moveLeft;
-	}
-
-	public boolean isMoveUp() {
-		return moveUp;
-	}
-
-	public void setMoveUp(boolean moveUp) {
-		this.moveUp = moveUp;
-	}
-
-	public void moveLeft() {
-		this.setLocation(this.getX() - velX, this.getY());
-	}
-	
-	public void moveRight() {
-		this.setLocation(this.getX() + velX, this.getY());;
-	}
-	
-	public void moveUp() {
-		if (this.velY >= -Constants.PLAYER_Y_VELOCITY) {
-			this.setLocation(this.getX(), this.getY() - velY);
-			this.velY -= Constants.PLAYER_GRAVITY;
-		} else {
-			this.moveUp = false;
-			this.velY = Constants.PLAYER_Y_VELOCITY;
-		}
-	}
 
 	public int getVelY() {
 		return velY;
@@ -92,17 +51,17 @@ private ImageIcon ii;
 
         if (key == KeyEvent.VK_LEFT) {
             velX = -50;
-        	moveLeft();
+        	//moveLeft();
         }
 
         if (key == KeyEvent.VK_RIGHT) {
             velX = 50; 
-        	moveRight();
+        	//moveRight();
         }
 
         if (key == KeyEvent.VK_UP) {
             velY = 25;
-        	moveUp();
+        	//moveUp();
         }
 
     }
@@ -126,8 +85,8 @@ private ImageIcon ii;
     }
     
     public void move() {
-        x += velX;
-        y += velY;
+   //     x += velX;
+    //    y += velY;
     }
     
 	public static void main(String[] args)
